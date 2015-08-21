@@ -1,0 +1,11 @@
+set number
+
+set mouse=a
+
+set undolevels=1000  " How many undos
+set undoreload=10000 " number of lines to save for undo
+
+filetype plugin indent on
+set autoindent
+set tabstop=4 shiftwidth=4 expandtab
+
