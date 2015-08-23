@@ -1,0 +1,32 @@
+# tmux session options
+set -g base-index 1 # window base index
+set -g default-terminal 'screen-256color'
+set -g history-limit 10000 # maximum number of lines held in window history
+set -g mouse-resize-pane on
+set -g mouse-select-pane on
+set -g mouse-select-window on
+set -g prefix C-a
+
+# tmux window options
+set -g -w mode-keys vi
+set -g -w pane-base-index 1
+
+# tmux key-bindings
+unbind-key C-b
+
+bind | split-window -h
+bind - split-window -v
+bind C-w kill-pane
+bind r source-file ~/.tmux.conf \; display "~/.tmux.conf sourced!"
+
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+bind -r Tab next-window
+bind n new-window
+
+bind left select-window -p
+bind right select-window -n
+
