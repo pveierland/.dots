@@ -82,7 +82,7 @@ Windows Registry Editor Version 5.00
 "LogHost"=""
 "SSH2DES"=dword:00000000
 "PublicKeyFile"=""
-"RemoteCommand"=""
+"RemoteCommand="tmux attach || tmux new -s default"
 "RFCEnviron"=dword:00000000
 "PassiveTelnet"=dword:00000000
 "BackspaceIsDelete"=dword:00000001
