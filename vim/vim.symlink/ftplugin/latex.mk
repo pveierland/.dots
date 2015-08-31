@@ -1,10 +1,10 @@
 .PHONY: clean
 
 %.pdf: %.tex $(DEPENDS)
-	rubber -f --pdf -s $<
-	rubber-info --check $<
-	mv *.pdf /media/sf_ubuntu/
-	rubber --clean
+	pdflatex -output-directory=/media/sf_ubuntu $<
+	#rubber -f --pdf -s $<
+	#rubber-info --check $<
+	#mv *.pdf /media/sf_ubuntu/
 
 clean:
 	rm -rf *.aux *.bbl *.blg *.log *.toc *.snm *.out *.nav tags

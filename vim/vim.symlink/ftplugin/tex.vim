@@ -5,3 +5,5 @@ else
     exec "setlocal makeprg=make\\ -f\\ ~/.vim/ftplugin/latex.mk\\ " . substitute(bufname("%"),"tex$","pdf", "")
 endif
 
+let b:did_indent = 1
+

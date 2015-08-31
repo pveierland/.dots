@@ -27,6 +27,6 @@ bind l select-pane -R
 bind -r Tab next-window
 bind n new-window
 
-bind left select-window -p
-bind right select-window -n
+bind -r left select-window -p
+bind -r right select-window -n
 

@@ -9,3 +9,13 @@ filetype plugin indent on
 set autoindent
 set tabstop=4 shiftwidth=4 expandtab
 
+" Highlight search results
+set hlsearch
+
+" Window split default
+set splitright
+set splitbelow
+
+" Enable spell checking
+set spell spelllang=en_us
+
