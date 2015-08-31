@@ -135,7 +135,7 @@ Windows Registry Editor Version 5.00
 "WinTitle"=""
 "TermWidth"=dword:00000050
 "TermHeight"=dword:00000018
-"Font"="Droid Sans Mono"
+"Font"="Hack"
 "FontIsBold"=dword:00000000
 "FontCharSet"=dword:00000000
 "FontHeight"=dword:0000000e
