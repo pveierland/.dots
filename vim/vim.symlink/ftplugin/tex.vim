@@ -7,3 +7,6 @@ endif
 
 let b:did_indent = 1
 
+" Enable spell checking
+set spell spelllang=en_us
+
