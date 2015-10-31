@@ -13,13 +13,16 @@ nnoremap <silent> <F9> :PrevColorScheme<CR>
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'xolox/vim-misc'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'Taverius/vim-colorscheme-manager'
+Plugin 'adrianolaru/vim-adio'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'chrisbra/Recover.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'rhysd/vim-clang-format'
 Plugin 'xolox/vim-colorscheme-switcher'
+Plugin 'xolox/vim-misc'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -56,4 +59,17 @@ vnoremap // y/<C-R>"<CR>
 
 " Substitute selected text
 vnoremap %s y:%s/<C-R>"/
+
+"http://vim.wikia.com/wiki/Using_vim_color_schemes_with_Putty
+if has("terminfo")
+    let &t_Co=16
+    let &t_AB="\<Esc>[%?%p1%{8}%<%t%p1%{40}%+%e%p1%{92}%+%;%dm"
+    let &t_AF="\<Esc>[%?%p1%{8}%<%t%p1%{30}%+%e%p1%{82}%+%;%dm"
+else
+    let &t_Co=16
+    let &t_Sf="\<Esc>[3%dm"
+    let &t_Sb="\<Esc>[4%dm"
+endif
+
+let g:clang_format#command = "clang-format-3.6"
 
