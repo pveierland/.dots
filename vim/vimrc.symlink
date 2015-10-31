@@ -7,8 +7,10 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'adrianolaru/vim-adio'
+Plugin 'chrisbra/Recover.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'rhysd/vim-clang-format'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,6 +43,8 @@ else
     let &t_Sf="\<Esc>[3%dm"
     let &t_Sb="\<Esc>[4%dm"
 endif
+
+let g:clang_format#command = "clang-format-3.6"
 
 colorscheme adio
 
