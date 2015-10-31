@@ -122,3 +122,5 @@ if [ -f /usr/local/bin/activate.sh ]; then
     . /usr/local/bin/activate.sh
 fi
 
+export PYTHONDONTWRITEBYTECODE=1
+
