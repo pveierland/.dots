@@ -10,6 +10,8 @@ AllowShortIfStatementsOnASingleLine: 'false'
 AllowShortLoopsOnASingleLine: 'false'
 AlwaysBreakAfterDefinitionReturnType: 'true'
 AlwaysBreakTemplateDeclarations: 'true'
+BinPackArguments: 'false'
+BinPackParameters: 'false'
 BreakBeforeBraces: Allman
 ConstructorInitializerIndentWidth: '4'
 IndentCaseLabels: 'true'
