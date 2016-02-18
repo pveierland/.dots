@@ -123,4 +123,5 @@ if [ -f /usr/local/bin/activate.sh ]; then
 fi
 
 export PYTHONDONTWRITEBYTECODE=1
+export TEXINPUTS=~/permve-ntnu-latex/:
 
