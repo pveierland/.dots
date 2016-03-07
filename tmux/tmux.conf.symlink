@@ -2,6 +2,7 @@
 set -g base-index 1 # window base index
 set -g default-terminal 'screen-256color'
 set -g history-limit 10000 # maximum number of lines held in window history
+set -g mode-mouse on
 set -g mouse-resize-pane on
 set -g mouse-select-pane on
 set -g mouse-select-window on
