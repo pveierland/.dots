@@ -5,25 +5,18 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Various plugin settings
-let g:colorscheme_switcher_exclude = []
-let g:colorscheme_manager_define_mappings = 0
-let g:ctrlp_follow_symlinks = 1
-nnoremap <silent> <F9> :PrevColorScheme<CR>
-
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Taverius/vim-colorscheme-manager'
 Plugin 'adrianolaru/vim-adio'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'chrisbra/Recover.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'rhysd/vim-clang-format'
-Plugin 'xolox/vim-colorscheme-switcher'
 Plugin 'xolox/vim-misc'
 Plugin 'junegunn/goyo.vim' " Distraction free mode
+Plugin 'freeo/vim-kalisi'
+Plugin 'Valloric/YouCompleteMe'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -47,7 +40,7 @@ set splitright
 set splitbelow
 
 " Set 256 colors
-set t_Co=256
+" set t_Co=256
 
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
@@ -61,16 +54,15 @@ vnoremap // y/<C-R>"<CR>
 " Substitute selected text
 vnoremap %s y:%s/<C-R>"/
 
-"http://vim.wikia.com/wiki/Using_vim_color_schemes_with_Putty
-if has("terminfo")
-    let &t_Co=16
-    let &t_AB="\<Esc>[%?%p1%{8}%<%t%p1%{40}%+%e%p1%{92}%+%;%dm"
-    let &t_AF="\<Esc>[%?%p1%{8}%<%t%p1%{30}%+%e%p1%{82}%+%;%dm"
-else
-    let &t_Co=16
-    let &t_Sf="\<Esc>[3%dm"
-    let &t_Sb="\<Esc>[4%dm"
+let &t_AB="\e[48;5;%dm"
+let &t_AF="\e[38;5;%dm"
+
+if &term =~ '^screen'
+    set ttymouse=xterm2
 endif
 
 let g:clang_format#command = "clang-format-3.6"
+
+colorscheme kalisi
+set background=light
 
