@@ -1,7 +1,7 @@
 .PHONY: clean
 
 %.pdf: %.tex $(DEPENDS)
-	pdflatex --shell_escape $<
+	pdflatex --shell-escape $<
 	cp *.pdf /media/sf_ubuntu/
 
 clean:
