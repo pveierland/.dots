@@ -132,4 +132,3 @@ https://www.spotify.com/download/linux/
   ```
   c.MultiKernelManager.default_kernel_name = 'conda env:tensorflow'
   ```
-  ```
