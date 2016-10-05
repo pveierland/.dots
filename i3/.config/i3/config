@@ -182,3 +182,4 @@ bindsym $mod+Tab workspace back_and_forth
 exec_always feh --bg-scale /home/pveierland/Dropbox/bin/iss.jpg
 
 exec --no-startup-id compton -f
+exec dropbox start
