@@ -125,3 +125,8 @@ fi
 export PYTHONDONTWRITEBYTECODE=1
 export TEXINPUTS=~/permve-ntnu-latex/:
 
+export PATH="$PATH:/usr/local/cuda/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+export CUDA_HOME=/usr/local/cuda
+
+export PATH="/home/$USER/anaconda2/bin:$PATH"
