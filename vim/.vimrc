@@ -16,7 +16,6 @@ Plugin 'rhysd/vim-clang-format'
 Plugin 'xolox/vim-misc'
 Plugin 'junegunn/goyo.vim' " Distraction free mode
 Plugin 'freeo/vim-kalisi'
-Plugin 'Valloric/YouCompleteMe'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
