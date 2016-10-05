@@ -125,5 +125,11 @@ https://www.spotify.com/download/linux/
 
   ```
   jupyter notebook --generate-config
+  ```
+  
+  Edit the following line within `~/.jupyter/jupyter_notebook_config.py`:
+  
+  ```
   c.MultiKernelManager.default_kernel_name = 'conda env:tensorflow'
+  ```
   ```
