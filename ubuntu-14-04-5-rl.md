@@ -5,7 +5,7 @@ http://releases.ubuntu.com/14.04.5/ubuntu-14.04.5-desktop-amd64.iso
 ## Basics
 
 ```
-sudo apt install git vim stow keepass2 imagemagick
+sudo apt install git vim stow keepass2 imagemagick texlive-full
 ```
 
 # i3 + related
