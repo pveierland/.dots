@@ -14,6 +14,12 @@ sudo apt install git vim stow keepass2 imagemagick
 sudo apt install i3 rofi compton lxappearance scrot thunar feh playerctl
 ```
 
+# Playerctl
+
+For media control.
+
+https://github.com/acrisci/playerctl/releases
+
 # Moka Icon Theme
 
 https://snwh.org/moka/download
@@ -126,9 +132,9 @@ https://www.spotify.com/download/linux/
   ```
   jupyter notebook --generate-config
   ```
-  
+
   Edit the following line within `~/.jupyter/jupyter_notebook_config.py`:
-  
+
   ```
   c.MultiKernelManager.default_kernel_name = 'conda env:tensorflow'
   ```
