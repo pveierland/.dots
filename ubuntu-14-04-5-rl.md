@@ -14,6 +14,13 @@ sudo apt install git vim stow keepass2 imagemagick texlive-full
 sudo apt install i3 rofi compton lxappearance scrot thunar feh playerctl
 ```
 
+Fix OSD notifications:
+
+```
+sudo apt purge dunst
+killall dunst
+```
+
 # Playerctl
 
 For media control.
