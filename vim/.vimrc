@@ -7,7 +7,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'adrianolaru/vim-adio'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'chrisbra/Recover.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -15,6 +14,10 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'xolox/vim-misc'
 Plugin 'junegunn/goyo.vim' " Distraction free mode
+
+" Color schemes
+Plugin 'adrianolaru/vim-adio'
+Plugin 'chriskempson/base16-vim'
 Plugin 'freeo/vim-kalisi'
 
 " " All of your Plugins must be added before the following line
@@ -39,7 +42,7 @@ set splitright
 set splitbelow
 
 " Set 256 colors
-" set t_Co=256
+set t_Co=256
 
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
@@ -62,6 +65,7 @@ endif
 
 let g:clang_format#command = "clang-format-3.6"
 
-colorscheme kalisi
-set background=light
+let base16colorspace=256
+colorscheme base16-default-dark
+set background=dark
 
