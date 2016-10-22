@@ -125,6 +125,9 @@ fi
 export PYTHONDONTWRITEBYTECODE=1
 export TEXINPUTS=~/permve-ntnu-latex/:
 
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
 export PATH="$PATH:/usr/local/cuda/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
 export CUDA_HOME=/usr/local/cuda
