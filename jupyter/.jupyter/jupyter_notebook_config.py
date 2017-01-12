@@ -25,10 +25,10 @@
 #c.JupyterApp.answer_yes = False
 
 ## Full path of a config file.
-#c.JupyterApp.config_file = u''
+#c.JupyterApp.config_file = ''
 
 ## Specify a config file to load.
-#c.JupyterApp.config_file_name = u''
+#c.JupyterApp.config_file_name = ''
 
 ## Generate default config file.
 #c.JupyterApp.generate_config = False
@@ -70,14 +70,14 @@
 #  If not specified, the default browser will be determined by the `webbrowser`
 #  standard library module, which allows setting of the BROWSER environment
 #  variable to override it.
-#c.NotebookApp.browser = u''
+#c.NotebookApp.browser = ''
 
 ## The full path to an SSL/TLS certificate file.
-#c.NotebookApp.certfile = u''
+#c.NotebookApp.certfile = ''
 
 ## The full path to a certificate authority certificate for SSL/TLS client
 #  authentication.
-#c.NotebookApp.client_ca = u''
+#c.NotebookApp.client_ca = ''
 
 ## The config manager class to use
 #c.NotebookApp.config_manager_class = 'notebook.services.config.manager.ConfigManager'
@@ -95,10 +95,10 @@
 #  
 #  Note: Cookie secrets should be kept private, do not share config files with
 #  cookie_secret stored in plaintext (you can read the value from a file).
-#c.NotebookApp.cookie_secret = ''
+#c.NotebookApp.cookie_secret = b''
 
 ## The file where the cookie secret is stored.
-#c.NotebookApp.cookie_secret_file = u''
+#c.NotebookApp.cookie_secret_file = ''
 
 ## The default URL to redirect to from `/`
 #c.NotebookApp.default_url = '/tree'
@@ -160,7 +160,7 @@
 #c.NotebookApp.kernel_spec_manager_class = 'jupyter_client.kernelspec.KernelSpecManager'
 
 ## The full path to a private key file for usage with SSL/TLS.
-#c.NotebookApp.keyfile = u''
+#c.NotebookApp.keyfile = ''
 
 ## The login handler class to use.
 #c.NotebookApp.login_handler_class = 'notebook.auth.login.LoginHandler'
@@ -176,7 +176,7 @@
 #c.NotebookApp.nbserver_extensions = {}
 
 ## The directory to use for notebooks and kernels.
-#c.NotebookApp.notebook_dir = u''
+#c.NotebookApp.notebook_dir = ''
 
 ## Whether to open in a browser after starting. The specific browser used is
 #  platform dependent and determined by the python standard library `webbrowser`
@@ -191,7 +191,7 @@
 #    from notebook.auth import passwd; passwd()
 #  
 #  The string should be of the form type:salt:hashed-password.
-#c.NotebookApp.password = u''
+#c.NotebookApp.password = ''
 
 ## The port the notebook server will listen on.
 #c.NotebookApp.port = 8888
@@ -261,7 +261,7 @@
 ## Set the kernel's IP address [default localhost]. If the IP address is
 #  something other than localhost, then Consoles on other machines will be able
 #  to connect to the Kernel, so be careful!
-#c.ConnectionFileMixin.ip = u''
+#c.ConnectionFileMixin.ip = ''
 
 ## set the shell (ROUTER) port [default: random]
 #c.ConnectionFileMixin.shell_port = 0
@@ -359,7 +359,7 @@
 #c.Session.item_threshold = 64
 
 ## execution key, for signing messages.
-#c.Session.key = ''
+#c.Session.key = b''
 
 ## path to file containing execution key.
 #c.Session.keyfile = ''
@@ -373,7 +373,7 @@
 #c.Session.packer = 'json'
 
 ## The UUID identifying this session.
-#c.Session.session = u''
+#c.Session.session = ''
 
 ## The digest scheme used to construct the message signatures. Must have the form
 #  'hmac-HASH'.
@@ -384,7 +384,7 @@
 #c.Session.unpacker = 'json'
 
 ## Username for the Session. Default is your system username.
-#c.Session.username = u'pveierland'
+#c.Session.username = 'pveierland'
 
 #------------------------------------------------------------------------------
 # MultiKernelManager(LoggingConfigurable) configuration
@@ -406,7 +406,7 @@ c.MultiKernelManager.default_kernel_name = 'conda env:tensorflow'
 ## A KernelManager that handles notebook mapping and HTTP error handling
 
 ## 
-#c.MappingKernelManager.root_dir = u''
+#c.MappingKernelManager.root_dir = ''
 
 #------------------------------------------------------------------------------
 # ContentsManager(LoggingConfigurable) configuration
@@ -436,7 +436,7 @@ c.MultiKernelManager.default_kernel_name = 'conda env:tensorflow'
 #c.ContentsManager.checkpoints_kwargs = {}
 
 ## Glob patterns to hide in file and directory listings.
-#c.ContentsManager.hide_globs = [u'__pycache__', '*.pyc', '*.pyo', '.DS_Store', '*.so', '*.dylib', '*~']
+#c.ContentsManager.hide_globs = ['__pycache__', '*.pyc', '*.pyo', '.DS_Store', '*.so', '*.dylib', '*~']
 
 ## Python callable or importstring thereof
 #  
@@ -510,7 +510,7 @@ c.MultiKernelManager.default_kernel_name = 'conda env:tensorflow'
 #c.FileContentsManager.post_save_hook = None
 
 ## 
-#c.FileContentsManager.root_dir = u''
+#c.FileContentsManager.root_dir = ''
 
 ## DEPRECATED, use post_save_hook. Will be removed in Notebook 5.0
 #c.FileContentsManager.save_script = False
@@ -531,13 +531,13 @@ c.MultiKernelManager.default_kernel_name = 'conda env:tensorflow'
 ## The sqlite file in which to store notebook signatures. By default, this will
 #  be in your Jupyter data directory. You can set it to ':memory:' to disable
 #  sqlite writing to the filesystem.
-#c.NotebookNotary.db_file = u''
+#c.NotebookNotary.db_file = ''
 
 ## The secret key with which notebooks are signed.
-#c.NotebookNotary.secret = ''
+#c.NotebookNotary.secret = b''
 
 ## The file where the secret key is stored.
-#c.NotebookNotary.secret_file = u''
+#c.NotebookNotary.secret_file = ''
 
 #------------------------------------------------------------------------------
 # KernelSpecManager(LoggingConfigurable) configuration
@@ -554,4 +554,4 @@ c.MultiKernelManager.default_kernel_name = 'conda env:tensorflow'
 ## Whitelist of allowed kernel names.
 #  
 #  By default, all installed kernels are allowed.
-#c.KernelSpecManager.whitelist = set([])
+#c.KernelSpecManager.whitelist = set()
