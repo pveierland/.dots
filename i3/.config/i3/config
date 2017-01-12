@@ -170,8 +170,8 @@ bar {
 }
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -5% #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
@@ -197,4 +197,4 @@ exec_always feh --bg-scale /home/pveierland/Dropbox/bin/iss.jpg
 
 exec --no-startup-id "setxkbmap -layout us,no -option grp:alt_shift_toggle"
 exec --no-startup-id compton -f
-exec dropbox start
+exec /home/pveierland/.dropbox-dist/dropboxd
