@@ -22,3 +22,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 PATH="$HOME/.config/i3:$PATH"
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh

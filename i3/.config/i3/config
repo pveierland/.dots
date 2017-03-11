@@ -187,7 +187,10 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 \
+    -padding 50 -opacity 90 -bw 0 -bc "#000000"   \
+    -bg "#000000" -fg "#ffffff" -h1bg "#000000"   \
+    -h1fg "#9575cd" -font "System San Francisco Display 18"
 
 bindsym $mod+Shift+x exec i3lock-extra -s -p
 
