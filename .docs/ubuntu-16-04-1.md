@@ -5,7 +5,7 @@ http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-desktop-amd64.iso
 ## Basics
 
 ```
-sudo apt install git vim stow keepass2 imagemagick texlive-full
+sudo apt install git vim stow keepass2 imagemagick texlive-full virtualenv virtualenvwrapper cmake qt5-default libboost-all-dev htop
 ```
 
 ## Dotfiles
@@ -56,6 +56,10 @@ https://www.dropbox.com/install-linux
 # Spotify
 
 https://www.spotify.com/download/linux/
+
+# Sublime Text
+
+https://www.sublimetext.com/3
 
 # NVIDIA + CUDA + cuDNN
 
