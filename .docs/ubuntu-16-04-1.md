@@ -87,6 +87,13 @@ https://www.sublimetext.com/3
   sudo chmod a+r /usr/lib/x86_64-linux-gnu/libcudnn*
   ```
 
+4. Fix screen tearing by adding the following lines to `Section "Screen"` in `/etc/X11/xorg.conf`:
+
+  ```
+  Option         "TripleBuffer" "True"
+  Option         "metamodes" "nvidia-auto-select +0+0 { ForceCompositionPipeline = On }"
+  ```
+
 # Anaconda
 
   https://www.continuum.io/downloads
