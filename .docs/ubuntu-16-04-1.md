@@ -5,7 +5,7 @@ http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-desktop-amd64.iso
 ## Basics
 
 ```
-sudo apt install git vim stow keepass2 imagemagick texlive-full virtualenv virtualenvwrapper cmake qt5-default libboost-all-dev htop
+sudo apt install git vim stow keepass2 imagemagick texlive-full virtualenv virtualenvwrapper cmake qt5-default libboost-all-dev htop tmux
 ```
 
 ## Dotfiles
