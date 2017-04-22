@@ -162,13 +162,6 @@ client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-        tray_output primary
-}
-
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
@@ -197,6 +190,7 @@ bindsym $mod+Shift+x exec i3lock-extra -s -p
 bindsym $mod+Tab workspace back_and_forth
 
 exec_always feh --bg-scale /home/pveierland/Dropbox/bin/iss.jpg
+exec_always --no-startup-id polybar bottom
 
 exec --no-startup-id "setxkbmap -layout us,no -option grp:alt_shift_toggle"
 exec --no-startup-id compton -f

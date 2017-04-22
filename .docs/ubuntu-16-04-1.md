@@ -31,6 +31,10 @@ sudo apt purge dunst
 killall dunst
 ```
 
+# Polybar
+
+https://www.ubuntuupdates.org/package/getdeb_apps/xenial/apps/getdeb/polybar
+
 # Playerctl
 
 For media control.

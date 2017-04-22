@@ -1,0 +1,46 @@
+[bar/bottom]
+bottom = true
+width  = 100%
+height = 27
+
+foreground = #fff
+background = #ff2f343f
+
+padding-right = 1
+
+font-0 = System San Francisco Display:size=11;0
+font-1 = Material Icons:size=11;-2
+font-2 = FontAwesome:size=11;-2
+
+modules-right = keyboard cpu temperature clock
+
+[module/clock]
+type     = internal/date
+interval = 1
+date     =  %A %Y-%m-%d %H:%M:%S
+label-padding-left = 2
+
+[module/cpu]
+type     = internal/cpu
+interval = 2
+format   = <label>
+label    =  %percentage%%
+label-padding-right = 1
+label-padding-left  = 2
+
+[module/keyboard]
+type   = internal/xkeyboard
+format = <label-layout>
+label-layout = ⌨ %name%
+
+[module/temperature]
+type         = internal/temperature
+interval     = 2
+thermal-zone = 0
+
+format                = <label>
+format-warn           = <label-warn>
+label                 = %temperature%
+label-foreground      = #fff
+label-warn            = %temperature%
+label-warn-foreground = #f00
