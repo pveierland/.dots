@@ -187,6 +187,8 @@ bindsym $mod+d exec rofi -show run -lines 3 -eh 2 \
 
 bindsym $mod+Shift+x exec i3lock-extra -s -p
 
+bindsym Print exec gnome-screenshot
+
 bindsym $mod+Tab workspace back_and_forth
 
 exec_always feh --bg-scale /home/pveierland/Dropbox/bin/iss.jpg
