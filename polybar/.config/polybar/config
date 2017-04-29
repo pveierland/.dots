@@ -1,10 +1,22 @@
+[colors]
+background     = #2f343f
+background-alt = #6f7b95
+foreground     = #ffffff
+foreground-alt = #f3f4f5
+foreground-dim = #676e7d
+primary        = #ffb52a
+secondary      = #e60053
+alert          = #ff6600
+high           = #268bd2
+high-alt       = #0c2b41
+
 [bar/bottom]
 bottom = true
 width  = 100%
 height = 27
 
-foreground = #fff
-background = #ff2f343f
+foreground = ${colors.foreground}
+background = ${colors.background}
 
 padding-right = 1
 
@@ -12,6 +24,7 @@ font-0 = System San Francisco Display:size=11;0
 font-1 = Material Icons:size=11;-2
 font-2 = FontAwesome:size=11;-2
 
+modules-left  = i3
 modules-right = keyboard cpu temperature clock
 
 [module/clock]
@@ -44,3 +57,30 @@ label                 = %temperature%
 label-foreground      = #fff
 label-warn            = %temperature%
 label-warn-foreground = #f00
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.high}
+label-focused-padding = 4
+
+label-unfocused = %index%
+label-unfocused-foreground = ${colors.foreground-dim}
+label-unfocused-padding = 4
+
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 4
+
+label-visible = %index%
+label-visible-foreground = 2
+label-visible-padding = 2

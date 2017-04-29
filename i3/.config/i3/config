@@ -21,6 +21,9 @@ font pango:System San Francisco Display 11
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# No borders on windows
+new_window none
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -108,7 +111,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-set $mode_system System (l) Lock (e) Logout (s) Suspend (h) Hibernate (r) Reboot (shift+s) Shutdown
+set $mode_system SYSTEM: LOCK (l) LOGOUT (e) SUSPEND (s) HIBERNATE (h) REBOOT (r) SHUTDOWN (S)
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
@@ -124,30 +127,30 @@ mode "$mode_system" {
 bindsym $mod+Pause mode "$mode_system"
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+mode "RESIZE" {
+    # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 pptr
+    bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "RESIZE"
 
 set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
@@ -163,13 +166,9 @@ client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
@@ -192,8 +191,8 @@ bindsym Print exec gnome-screenshot
 bindsym $mod+Tab workspace back_and_forth
 
 exec_always feh --bg-scale /home/pveierland/Dropbox/bin/iss.jpg
-exec_always --no-startup-id polybar bottom
 
+exec --no-startup-id polybar -r bottom
 exec --no-startup-id "setxkbmap -layout us,no -option grp:alt_shift_toggle"
 exec --no-startup-id compton -f
 exec /home/pveierland/.dropbox-dist/dropboxd
