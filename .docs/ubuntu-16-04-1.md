@@ -5,7 +5,22 @@ http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-desktop-amd64.iso
 ## Basics
 
 ```
-sudo apt install git vim stow keepass2 imagemagick texlive-full virtualenv virtualenvwrapper cmake qt5-default libboost-all-dev htop tmux
+sudo apt install \
+  cmake \
+  git \
+  htop \
+  imagemagick \
+  keepass2 \
+  libboost-all-dev \
+  qt5-default \
+  python-pygments \ # Syntax highlighting library
+  python3-pygments \ # Syntax highlighting library
+  stow \
+  texlive-full \
+  tmux \
+  vim \
+  virtualenv \
+  virtualenvwrapper
 ```
 
 ## Dotfiles
