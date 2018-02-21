@@ -20,7 +20,8 @@ sudo apt install \
   tmux \
   vim \
   virtualenv \
-  virtualenvwrapper
+  virtualenvwrapper \
+  xclip \ # X clipboard utility
 ```
 
 ## Dotfiles
