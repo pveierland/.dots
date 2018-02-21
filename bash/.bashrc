@@ -128,10 +128,25 @@ export TEXINPUTS=~/permve-ntnu-latex/:
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
+# https://unix.stackexchange.com/a/230442
+export NO_AT_BRIDGE=1
+
 export PATH="$PATH:/usr/local/cuda/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
 export CUDA_HOME=/usr/local/cuda
 
+export PATH="/home/pveierland/vii/scripts/:$PATH"
+
 alias a='export PATH="/home/$USER/anaconda3/bin:$PATH"'
-alias tf='source activate tensorflow'
-alias tb='tensorboard --logdir=experiments > /dev/null 2>&1 &'
+#alias tf='source activate tensorflow'
+#alias tb='tensorboard --logdir=experiments > /dev/null 2>&1 &'
+alias tf='nvidia-docker run -it -p 8888:8888 --rm -v /home/pveierland/darkflow/:/darkflow gcr.io/tensorflow/tensorflow:latest-gpu bash'
+alias nb='nvidia-docker run --rm -v /home/pveierland/vii/vii_util:/vii_util -v /home/pveierland/permve-ntnu-master/models:/tensorflow/tensorflow/models -v /home/pveierland/permve-ntnu-master/notebooks/:/notebooks -v /vii/ml/:/vii/ml -v /home/pveierland/permve-ntnu-master/thesis/:/vii/thesis -p 8888:8888 --net viilocal_default pveierland/tensorflow-gpu-object-detection-custom'
+alias apmnb='nvidia-docker run --rm -v /home/pveierland/apm-statoil-iceberg:/notebooks -p 8888:8888 pveierland/tensorflow-gpu-theano-lasagne'
+alias fastai='nvidia-docker run --rm -v /home/pveierland/courses/:/notebooks -p 8888:8888 deeprig/fastai-course-1'
+
+# transfer.sh upload function:
+transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi
+    tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }
+
+export PYTHONPATH=$PYTHONPATH:${HOME}/vii/vii_util:${HOME}/permve-ntnu-master/models/research/slim:${HOME}/permve-ntnu-master/models/research
