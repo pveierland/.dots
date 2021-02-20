@@ -21,8 +21,7 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-PATH="$HOME/.config/i3:$PATH"
+if [ -d "${HOME}/.config/i3" ]; then
+    PATH="${HOME}/.config/i3:${PATH}"
+fi
 
-# virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
