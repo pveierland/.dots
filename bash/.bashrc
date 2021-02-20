@@ -140,6 +140,9 @@ export PATH=~/.local/bin:"$PATH"
 export DISPLAY=localhost:0.0
 export XDG_RUNTIME_DIR=~/.xdg-runtime-dir
 
-source ~/zephyrproject/zephyr/zephyr-env.sh
+if [ -f "${HOME}/zephyrproject/zephyr/zephyr-env.sh" ]; then
+    source "${HOME}/zephyrproject/zephyr/zephyr-env.sh"
+fi
+
 alias sanity='sanitycheck -O sanity-out -n -N -T . -i -v -v -p native_posix_64'
 
