@@ -10,7 +10,7 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -39,7 +39,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -118,31 +118,34 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -f /usr/local/bin/activate.sh ]; then
-    . /usr/local/bin/activate.sh
-fi
-
-export PYTHONDONTWRITEBYTECODE=1
-export TEXINPUTS=~/permve-ntnu-latex/:
-
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-# https://unix.stackexchange.com/a/230442
-export NO_AT_BRIDGE=1
-
-export PATH="$PATH:/usr/local/cuda/bin"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
-export CUDA_HOME=/usr/local/cuda
-
-export PATH=~/.local/bin:"$PATH"
-
 export DISPLAY=localhost:0.0
+export LESS="$LESS -Q -R"
+export LIBGL_ALWAYS_INDIRECT=1
+export NO_AT_BRIDGE=1
 export XDG_RUNTIME_DIR=~/.xdg-runtime-dir
+
+if [ -f "${HOME}/.google-credentials.json" ]; then
+    export GOOGLE_APPLICATION_CREDENTIALS="${HOME}/.google-credentials.json"
+fi
+
+if [ -f "/opt/ros/melodic/setup.bash" ]; then
+    source "/opt/ros/melodic/setup.bash"
+fi
 
 if [ -f "${HOME}/zephyrproject/zephyr/zephyr-env.sh" ]; then
     source "${HOME}/zephyrproject/zephyr/zephyr-env.sh"
 fi
 
-alias sanity='sanitycheck -O sanity-out -n -N -T . -i -v -v -p native_posix_64'
+
+alias rm="${HOME}/.dots/.shell-safe-rm/shell-safe-rm/bin/rm.sh"
+alias sanity='sanitycheck -O build -n -N -T . -i -v -v -p native_posix_64'
+
+tmux attach &> /dev/null
+
+if [[ ! $TERM =~ screen ]]; then
+    exec tmux
+fi
 
