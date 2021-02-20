@@ -1,37 +1,38 @@
-[hub]
-        protocol = https
-
-[user]
-        name = Per Magnus Veierland
-        email = pveierland@gmail.com
-
-[credential]
-        helper = GIT_CREDENTIAL_HELPER
+[apply]
+	whitespace = nowarn
 
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
 
 [core]
-        excludesfile = ~/.gitignore
-        editor = vim
+	excludesfile = ~/.gitignore
+	editor = vim
 
-[apply]
-        whitespace = nowarn
-
-[mergetool]
-        keepBackup = false
-
-[difftool]
-        prompt = false
-
-[help]
-        autocorrect = 0
-
-[push]
-        default = simple
+[credential]
+	helper = GIT_CREDENTIAL_HELPER
 
 [diff]
 	tool = meld
+
+[difftool]
+	prompt = false
+
+[help]
+	autocorrect = 0
+
+[hub]
+	protocol = https
+
+[mergetool]
+	keepBackup = false
+
+[push]
+	default = simple
+
+[user]
+	name = Per Magnus Veierland
+	email = pveierland@gmail.com
+
