@@ -16,7 +16,6 @@ Plugin 'xolox/vim-misc'
 Plugin 'junegunn/goyo.vim' " Distraction free mode
 
 " Color schemes
-Plugin 'adrianolaru/vim-adio'
 Plugin 'chriskempson/base16-vim'
 Plugin 'freeo/vim-kalisi'
 
