@@ -121,7 +121,7 @@ fi
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-if [[ grep -qE "WSL2" /proc/version &> /dev/null ]]; then
+if grep -qE "WSL2" /proc/version &> /dev/null; then
     export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 else
     export DISPLAY=localhost:0.0
